@@ -1,5 +1,6 @@
-import { firebaseConfig } from "./utils";
+import { firebaseConfig } from "../../utils/utils";
 import * as firebase from "firebase";
+const axios = require("axios");
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -12,6 +13,17 @@ var data = {
   timestamp: null,
   lat: null,
   lng: null
+};
+
+var ip = {};
+
+let makeReq = async function() {
+  var info = await axios.get(
+    `https://us-central1-ip-checkin-1571670157074.cloudfunctions.net/app`
+  );
+  console.log(info);
+  ip = { ...ip, ...info.data };
+  console.log(ip);
 };
 
 function initMap() {
@@ -128,7 +140,7 @@ function initFirebase(heatmap) {
       heatmap.getData().push(point);
 
       // Request entries older than expiry time (10 minutes).
-      var expiryMs = Math.max(60 * 10 * 1000 - elapsedMs, 0);
+      var expiryMs = Math.max(60 * 1 * 1000 - elapsedMs, 0);
       // Set client timeout to remove the point after a certain time.
       window.setTimeout(function() {
         // Delete the old point from the database.
@@ -203,4 +215,5 @@ function getTimestamp(addClick) {
   });
 }
 
+makeReq();
 initMap();
