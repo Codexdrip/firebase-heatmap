@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div>
+      <h1>Next Line</h1>
+      <pre id="object"></pre>
+      <h1 id="status">Current Status</h1>
+      <input type="text" id="currMsg">
+      <button id="save">Save</button>
+
+    </div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key={Your Api Key Here}&libraries=visualization&callback=initMap">
+    </script>
+   
+   
+
+
+
+   
+  </body>
+
+</html>
