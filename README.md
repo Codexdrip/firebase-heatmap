@@ -1,3 +1,8 @@
+# Code Example: 
+
+![Gif to transition](https://media.giphy.com/media/VGUzUH08CumVZV8Suv/giphy.gif)
+
+
 Canvas Boilerplate is the go-to solution for quickly creating modern canvas pieces using ES6 and webpack.
 
 ## Getting Started
