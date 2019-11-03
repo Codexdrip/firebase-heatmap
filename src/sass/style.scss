@@ -1,5 +1,269 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
+
+$base-color: #0e1626; 
+$text-color: #ccc;
+$accent: #3E38F2;
+$accent2: #0029FA;
+$accent3: #230A59;
+$accent4: #5C73F2;
+$accent5: #829FD9;
+$accent6: #F25CA2;
+$font1: 'Major Mono Display', monospace;
+
+
 *{
     box-sizing: border-box;
+    transition: background-color 1s, box-shadow 1s;
 }
+
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    background: $base-color;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+section{
+    width: 100%;
+    height: 80vh;
+}
+
+.fa-bell{
+    color: $accent2;
+}
+
+.accent{
+    color: $accent6;
+    border: 1px solid $accent4;
+    
+}
+
+.sm-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 0;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    width: 50%;
+    height: 50%;
+
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 0;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    width: 100%;
+    height: 80%;
+}
+
+.button {
+    width:10%;
+    height:40%;
+    text-align:center;
+    line-height:60px;
+    border-radius:50%;
+    background-color:$accent2;
+    color:#FFFFFF;
+    font-size:32px;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.22);
+    cursor:pointer;
+    &:hover{
+        background:darken($accent6,5%);
+        box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.28), 0 4px 15px 0 rgba(0, 0, 0, 0.25);
+    }
+    
+  }
+
+.map{
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 16px;
+
+
+    .map-title{
+        flex: 0;
+    }
+    .map-sub-title{
+        flex: 0;
+    }
+   
+    /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+    #map {
+        flex: 2 0 50vh;
+        width: 100%;
+        height: 100%;
+    }
+}
+.users{
+    flex: 1;
+    margin-bottom: 5vh;
+    color:$base-color;
+    display: flex;
+    flex-direction: row;
+    padding: 0 16px;
+    align-items: flex-start;
+
+    .user-checkin{
+        margin: 16px;
+        padding: 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        
+
+        .checkin-text{
+            flex: 0;
+            width: 100%;
+            align-self: center;
+        }
+
+        .checkin-btn{
+            flex: 0;
+            
+        }
+    }
+
+    .latest{
+        margin: 16px;
+        padding: 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .user-title{
+            flex: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid $base-color;
+            width: 100%;
+    
+            h1{
+                flex:1;
+            }
+            i{
+                flex:0;
+                font-size: 16px;
+            }
+        }
+        .current-users{
+            flex: 2 0 20vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+            .current-user{
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 8px;
+                
+                
+                img{
+                    flex: 1;
+                    width: 20%;
+                    height: auto;
+                    
+                }
+                h3{
+                    flex: 2; 
+                }
+    
+    
+            }
+        }
+    } 
+
+}
+
+.intro{
+    flex: 0;
+    padding-top: 5%;
+    margin-bottom: 20vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(black, black), url("https://images.unsplash.com/photo-1502920514313-52581002a659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: saturation;
+    
+
+    .header-text{
+        align-self: center;
+        color: lightgray;
+        font-size: 64px;
+        z-index: 1;
+        font-weight: 1000;
+    }
+
+    .header-sub{
+        align-self: center;
+        color: lightgray;
+        font-size: 32px;
+        z-index: 1;
+        font-weight: 800;
+    }
+
+    .header-par{
+        align-self: center;
+        color: lightgray;
+        z-index: 1;
+        font-weight: 800;
+    }
+
+    .scroll{
+        margin:0;
+        width: 100%;
+        font-size: 20vw;
+        font-family: $font1;
+        font-weight: 800;
+        color: $accent6;/*rgba(130, 159, 217, .1);*/
+        z-index: 1;
+
+        span{
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 0;
+        }
+    }
+    
+}
+
+
+
 
 
