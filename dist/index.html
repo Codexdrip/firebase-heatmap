@@ -8,9 +8,11 @@
   <link rel="shortcut icon" href="favicon.ico"></head>
   <body>
     <header class="intro">
-      <h1 class="header-text">Come Check-in <span class="accent">Here!</span> </h1>
-      <h3 class="header-sub">Please take a look at the site below and support it by clicking the check-in button.</h3>
-      <p class="header-par">You can also find a heat map that displays where everyone is checking in from, give it a test drive!</p>
+      <div class="header">
+        <h1 class="header-text">Come Check-in <span class="accent">Here!</span> </h1>
+        <h3 class="header-sub">Please take a look at the site below and support it by clicking the check-in button.</h3>
+        <p class="header-par">You can also find a heat map that displays where everyone is checking in from, give it a test drive!</p>
+      </div>
       <h1 class="scroll">
         <span id="S">S</span>
         <span id="C">C</span>
@@ -24,12 +26,14 @@
     <section class="users">
       <div class="user-checkin card">
           <div class="checkin-text">
+            <h3>Please take a look at the site below and support it by clicking the check-in button.</h3>
+            <h3>We capture the IP address and get your location from that, then we log your location on our map in Real Time!</h3>
             <h3>Do you want to check in from: <h1 class="accent" id="ip-info"></h1></h3>
           </div>
           <button id="checkin" class="checkin-btn button"><i class="fas fa-check"></i></button>
       </div>
       <div class="latest card">
-        <div class="user-title"><h1>Most Recent Checkins</h1><i class="fas fa-bell"></i></div>
+        <div class="user-title"><h1>Most Recent Checkins</h1></div>
         <div id="dynamic-users" class="current-users"></div>
       </div>
     </section>

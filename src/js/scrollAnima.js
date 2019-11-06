@@ -34,15 +34,9 @@ let tl2 = new TimelineMax({ repeat: -1 });
 //     ease: Power1.easeInOut
 //   });
 
-tl.from(s, 0.3, { y: -100, opacity: 0 })
-  .to(s, 0.3, { y: 100, opacity: 0 })
-  .from(c, 0.3, { y: -100, opacity: 0 })
-  .to(c, 0.3, { y: 100, opacity: 0 })
-  .from(r, 0.3, { y: -100, opacity: 0 })
-  .to(r, 0.3, { y: 100, opacity: 0 })
-  .from(o, 0.3, { y: -100, opacity: 0 })
-  .to(o, 0.3, { y: 100, opacity: 0 })
-  .from(l1, 0.3, { y: -100, opacity: 0 })
-  .to(l1, 0.3, { y: 100, opacity: 0 })
-  .from(l2, 0.3, { y: -100, opacity: 0 })
-  .to(l2, 0.3, { y: 100, opacity: 0 });
+tl.to(s, 5, { y: 100, opacity: 0 })
+  .to(c, 5,  { y: 100, opacity: 0 })
+  .to(r, 5,  { y: 100, opacity: 0 })
+  .to(o, 5,  { y: 100, opacity: 0 })
+  .to(l1, 5,  { y: 100, opacity: 0 })
+  .to(l2, 5,  { y: 100, opacity: 0 });
