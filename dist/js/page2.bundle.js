@@ -57475,7 +57475,7 @@ var _asyncToGenerator2 = __webpack_require__(/*! babel-runtime/helpers/asyncToGe
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _utils = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../../utils/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./utils/utils.js");
 
 var _firebase = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
 
@@ -57488,10 +57488,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 var modal = document.getElementById("myModal");
-
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
@@ -57951,6 +57949,27 @@ if (document.readyState == "complete") {
 }
 
 makeReq();
+
+/***/ }),
+
+/***/ "./utils/utils.js":
+/*!************************!*\
+  !*** ./utils/utils.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var firebaseConfig = {
+  /// Key
+};
+
+exports.firebaseConfig = firebaseConfig;
 
 /***/ })
 

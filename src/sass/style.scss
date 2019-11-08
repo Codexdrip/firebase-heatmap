@@ -52,17 +52,20 @@ html, body {
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #000;
     width: 80%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
   .close {
+    align-self: flex-end;
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
   }
