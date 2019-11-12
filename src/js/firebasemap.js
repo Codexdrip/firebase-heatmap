@@ -1,24 +1,25 @@
 import { firebaseConfig } from "../../utils/utils";
 import * as firebase from "firebase";
+import { TweenMax, Power2, TimelineMax } from "gsap";
 const axios = require("axios");
 
 var modal = document.getElementById("myModal");
+var modalContent = document.querySelector(".modal-content");
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-} 
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -38,13 +39,32 @@ let data = {
 };
 
 const saveToFirestore = function() {
+  let anime = new TimelineMax({ paused: true });
+
+  anime
+    .to(modal, 0.3, { display: "block" })
+    .from(modalContent, 1, {
+      y: -45,
+      opacity: 0,
+      ease: Power2.easeIn
+    })
+    .to(modalContent, 1, { y: 45, opacity: 0, ease: Power2.easeIn }, "+=2")
+    .to(modal, 1, {
+      display: "none",
+      onComplete: function() {
+        console.log("done!");
+        document.getElementById("map").scrollIntoView();
+      }
+    })
+    .set(modalContent, { opacity: 1 });
+
   let val = {
     test: `test${i}`
   };
   docRef.add(val).then(ref => {
-    console.log("Added document with ID: ", ref);
+    //console.log("Added document with ID: ", ref);
     i = i + 1;
-    modal.style.display = "block";
+    anime.play();
   });
 };
 
