@@ -8,7 +8,9 @@ module.exports = {
   entry: {
     page1: "./src/js/canvas.js",
     page2: "./src/js/firebasemap.js",
-    page3: "./src/js/scrollAnima.js"
+    page3: "./src/js/scrollAnima.js",
+    page4: "./src/js/mapsData.js"
+
   },
   output: {
     path: __dirname + "/dist/",
